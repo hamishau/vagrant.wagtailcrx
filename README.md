@@ -21,16 +21,12 @@ vagrant up
 
 ## Edit Hosts
 
-Edit your local hosts file and add the following line:
+Windows Powershell: `notepad c:\Windows\System32\Drivers\etc\hosts`
+Ubuntu Terminal: `sudo nano /etc/hosts`
 
-Windows Powershell:
- * `notepad c:\Windows\System32\Drivers\etc\hosts`
- * `192.168.56.10 yourapp.local`
- 
-Ubuntu Terminal:
- * `sudo nano /etc/hosts`
- * `192.168.56.10 yourapp.local`
- 
+```
+192.168.56.10 yourapp.local
+```
 ## Database Connection
 Replace the `DATABASES = ...` section in `yourapp/settings/base.py` with the following:
 
@@ -60,7 +56,9 @@ vagrant ssh -c 'cd /yourapp && python3 manage.py createsuperuser'
 
 ## Compile CSS
 
-* `vagrant ssh -c 'cd /yourapp && python3 manage.py sass website/static/website/src/custom.scss website/static/website/css/custom.css --watch'`
+```
+vagrant ssh -c 'cd /yourapp && python3 manage.py sass website/static/website/src/custom.scss website/static/website/css/custom.css --watch'
+```
 
 ## Start Development Server
 
