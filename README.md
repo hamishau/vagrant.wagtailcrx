@@ -21,8 +21,7 @@ vagrant up
 
 ## Edit Hosts
 
-Windows Powershell: `notepad c:\Windows\System32\Drivers\etc\hosts`
-
+Windows Powershell: `notepad c:\Windows\System32\Drivers\etc\hosts`  
 Ubuntu Terminal: `sudo nano /etc/hosts`
 
 ```
