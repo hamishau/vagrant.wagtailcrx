@@ -1,6 +1,13 @@
 # Introduction
 This is a guide to setup a new installation of Wagtail + CodeRed Extensions and Postgres, running in an Ubuntu 22.04 Vagrant Box. Install Vagrant and Virtualbox before proceeding.
 
+The **professional boilerplate** includes additional features pre-configured, such as:
+- Custom Image and Document models.
+- Custom User model (using email address as username).
+- Custom Navbar and Footer.
+- SCSS compilation (using Python, not Node.js).
+- Ruff, MyPy, Pytest tooling pre-configured.
+
 ---
 
 ## Clone Repository
