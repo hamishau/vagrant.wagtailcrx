@@ -20,19 +20,14 @@ Vagrant.configure("2") do |config|
     set -euo pipefail
 
     export DEBIAN_FRONTEND=noninteractive
+    export PIP_BREAK_SYSTEM_PACKAGES=1
 
     apt-get update
-    apt-get install -y build-essential libssl-dev libffi-dev libpq-dev python3-dev python3-pip python3-venv postgresql postgresql-contrib
+    apt-get install -y build-essential libssl-dev libffi-dev libpq-dev python3-dev python3-pip postgresql postgresql-contrib
 
     cd #{app_dir}
 
-    if [ ! -d .venv ]; then
-      python3 -m venv .venv
-    fi
-
-    . .venv/bin/activate
-    pip install --upgrade pip
-    pip install --upgrade psycopg2-binary coderedcms
+    pip3 install --break-system-packages --upgrade psycopg2-binary coderedcms
 
     if [ ! -f manage.py ]; then
       mv README.md INSTALL.md 2>/dev/null || true
@@ -40,7 +35,7 @@ Vagrant.configure("2") do |config|
     fi
 
     if [ -f requirements-dev.txt ]; then
-      pip install -r requirements-dev.txt
+      pip3 install --break-system-packages -r requirements-dev.txt
     fi
 
     # Ensure database exists and credentials are set
