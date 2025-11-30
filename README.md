@@ -29,7 +29,8 @@ vagrant up
 ## Edit Hosts
 
 Windows Powershell: `notepad c:\Windows\System32\Drivers\etc\hosts`  
-Ubuntu Terminal: `sudo nano /etc/hosts`
+Ubuntu Terminal: `sudo nano /etc/hosts`  
+MacOS Terminal: `sudo nano /etc/hosts`
 
 ```
 192.168.56.10 yourapp.local
